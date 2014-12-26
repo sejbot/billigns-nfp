@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 26, 2014, 3:15:57 PM
+    Author     : tobias
+*/
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+header {
+	background-color: rgb(233,239,248);
+	border-bottom: 1px solid lightsteelblue;
+	padding: 5px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+.container {
+	text-align: center;
+}
+
+.modes li {
+	font-size: 24px;
+	padding: 12px;
+}
+
+li.dry {
+	background-color: darkseagreen;
+}
+
+li.thread {
+}
+
+li.sticky {
+	background-color: lemonchiffon;
+}
+
+li.period {
+	background-color: indianred;
+}
+
+li.spotty {
+	background: url(polka-10-10.png) 0 10px repeat;
+}
