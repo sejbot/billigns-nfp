@@ -38,9 +38,18 @@ h1 {
 	text-align: center;
 }
 
-.modes li {
+.choices {
+	clear: both;
+}
+
+.choices li {
 	font-size: 24px;
 	padding: 12px;
+}
+
+.date-container {
+	padding: 10px;
+	float: left;
 }
 
 .day {
@@ -52,6 +61,11 @@ h1 {
 .month {
 	font-family: serif;
 	font-size: 1em;
+}
+
+.status-question {
+	float: left;
+	min-height: 1em;
 }
 
 li.dry {
@@ -71,4 +85,10 @@ li.period {
 
 li.spotty {
 	background: url(polka-10-10.png) 0 10px repeat;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
