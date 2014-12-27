@@ -43,6 +43,17 @@ h1 {
 	padding: 12px;
 }
 
+.day {
+	display: inline-block;
+	font-family: serif;
+	font-size: 3em;
+}
+
+.month {
+	font-family: serif;
+	font-size: 1em;
+}
+
 li.dry {
 	background-color: darkseagreen;
 }
