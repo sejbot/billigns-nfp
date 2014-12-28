@@ -61,6 +61,7 @@ h1 {
 .month {
 	font-family: serif;
 	font-size: 1em;
+	margin-top: -0.5em;
 }
 
 .status-question {
@@ -91,4 +92,10 @@ li.spotty {
   content: "";
   display: table;
   clear: both;
+}
+
+.choice-comment {
+	min-width: 30em;
+	width: 50%;
+	height: 10em;
 }

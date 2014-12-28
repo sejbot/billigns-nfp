@@ -4,18 +4,15 @@
 </head>
 
 <body>
-	{{> hello}}
 </body>
 
-<template name="hello">
+<template name="home">
 	<div class="container">
-		<header>
-			<div>Billings NFP</div>
-		</header>
+		{{> header}}
 		<div class="status-container clearfix">
 			<div class="date-container">
-				<div class="day">28</div>
-				<div class="month">december</div>
+				<div class="day">{{todaysDay}}</div>
+				<div class="month">{{todaysMonth}}</div>
 			</div>
 			<div class="status-question">
 				<p>Hur är det idag?</p>
@@ -23,21 +20,20 @@
 		</div>
 		<ul class="choices">
 			<li class="dry">
-				<a href="choice/dry">Torrt</a>
+				<a href="/choices/dry">{{getLocalChoice 'dry'}}</a>
 			</li>
 			<li class="thread">
-				<a href="choice/thread">Segt, tråddragande</a>
+				<a href="/choices/thread">{{getLocalChoice 'thread'}}</a>
 			</li>
 			<li class="sticky">
-				<a href="choice/sticky">Klibbigt</a>
+				<a href="/choices/sticky">{{getLocalChoice 'sticky'}}</a>
 			</li>
 			<li class="period">
-				<a href="choice/period">Mens</a>
+				<a href="/choices/period">{{getLocalChoice 'period'}}</a>
 			</li>
 			<li class="spotty">
-				<a href="choice/spotty">Lite blödning</a>
+				<a href="/choices/spotty">{{getLocalChoice 'spotty'}}</a>
 			</li>
 		</ul>
 	</div>
-
 </template>

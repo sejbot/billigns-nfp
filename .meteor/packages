@@ -7,3 +7,7 @@
 meteor-platform
 autopublish
 insecure
+iron:router
+mrt:moment
+mrt:moment-timezone
+rzymek:fullcalendar

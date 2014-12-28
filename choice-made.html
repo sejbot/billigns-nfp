@@ -1,0 +1,17 @@
+<template name="choiceMade">
+	<div class="container">
+		{{> header}}
+		<h1>Idag är det {{getLocalChoice choice}}</h1>
+		<form class="choice-info">
+			<label for="haveYouHadSex">Har du haft sex idag?</label>
+			<input type hidden name="choice" value="{{getLocalChoice choice}}" />
+			<input type="radio" name="haveYouHadSex" value="1">Ja
+			<input type="radio" name="haveYouHadSex" value="0" checked="checked">Nej
+			<div class="choice-comment-container">
+				<h2>Skriv en kommentar om du vill</h2>
+				<textarea class="choice-comment"></textarea>
+			</div>
+			<button type="submit">Spara</button>
+		</form>
+	</div>
+</template>
