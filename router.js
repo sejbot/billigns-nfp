@@ -1,6 +1,16 @@
 Router.map(function() {
 	this.route('home', {
-		path: '/'
+		path: '/',
+		onBeforeAction: function (pause) {
+			var currentBillingsDate = Session.get("billingsDate");
+			if (currentBillingsDate === undefined) {
+				Session.set("billingsDate", moment().format("YYYY-MM-DD"));
+			}
+			else {
+				Session.set("billingsDate", currentBillingsDate);
+			}
+			this.next();
+        }
 	});
 	this.route('calendar', {
 		path: '/calendar'

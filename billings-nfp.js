@@ -20,12 +20,16 @@ if (Meteor.isClient) {
 		return localChoice;
 	});
 
+	UI.registerHelper('date', function() {
+		return Session.get('date');
+	});
+
 	Template.home.helpers({
 		todaysDay: function() {
-			return moment().format('D');
+			return moment(Session.get("billingsDate"), "YYYY-MM-DD").format('D');
 		},
 		todaysMonth: function() {
-			return moment().format('MMMM');
+			return moment(Session.get("billingsDate"), "YYYY-MM-DD").format('MMMM');
 		}
 	});
 
@@ -35,11 +39,13 @@ if (Meteor.isClient) {
 			var choice = $(event.target).find('input:hidden[name=choice]').val();
 			var hadSex = $(event.target).find('input:radio[name=haveYouHadSex]:checked').val();
 			var comment = $(event.target).find('textarea').val();
+			var date = Session.get("billingsDate");
 			var existingEntry = Billings.findOne({id: moment().format('YYYYMD')});
 
 			var newEntry = {
-				id: moment().format('YYYYMD'),
+				id: date,
 				createdAt: new Date(),
+				date: date,
 				choice: choice,
 				hadSex: hadSex,
 				comment: comment
@@ -57,6 +63,7 @@ if (Meteor.isClient) {
 							{
 								id: newEntry.id,
 								createdAt: newEntry.createdAt,
+								date: newEntry.date,
 								choice: newEntry.choice,
 								hadSex: newEntry.hadSex,
 								comment: newEntry.comment
@@ -64,9 +71,38 @@ if (Meteor.isClient) {
 				}
 				);
 			}
-
+			Session.set("billingsDate", moment().format("YYYY-MM-DD"));
 			Router.go('/calendar');
 			return false;
+		}
+	});
+
+	Template.calendar.helpers({
+		options: function() {
+			var billings = Billings.find().fetch();
+			var colors = {
+				'dry': 'green',
+				'thread': 'white',
+				'sticky': 'yellow',
+				'period': 'red',
+				'spotty': 'pink'
+			};
+			return {
+				defaultView: 'month',
+				dayRender: function(date, cell) {
+					var formattedDate = date.format('YYYY-MM-DD');
+					var billingsForDate = _.where(billings, {'date': formattedDate});
+					if (billingsForDate.length > 0) {
+						var entry = billingsForDate[0];
+						color = colors[entry.choice];
+						cell.css("background-color", color);
+					}
+				},
+				dayClick: function(date, jsEvent, view) {
+					Session.set("billingsDate",date.format("YYYY-MM-DD"));
+					Router.go("/");
+				}
+			};
 		}
 	});
 }
