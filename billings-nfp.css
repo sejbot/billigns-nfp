@@ -16,8 +16,9 @@ body {
 }
 
 header {
-	background-color: rgb(247,247,247);
-	border-bottom: 1px solid rgb(200,200,200);
+	background-color: #22B5BF;
+	border-bottom: 2px solid #099CA6;
+	color: #fff;
 	padding: 5px;
 }
 
@@ -55,7 +56,6 @@ button[type=submit] {
 .status-container {
 	margin: 10px 10px 0 10px;
 	background-color: #FFF;
-	//border: 2px solid #e6e6e6;
 }
 
 .choice-info button[type=submit] {
