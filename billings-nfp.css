@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 body {
+	background-color: rgb(247,247,247);
 	padding: 0;
 	margin: 0;
 	font-family: "Helvetica Neue", sans-serif;
@@ -18,6 +19,10 @@ header {
 	background-color: rgb(247,247,247);
 	border-bottom: 1px solid rgb(200,200,200);
 	padding: 5px;
+}
+
+h2 {
+	font-size: 1.2em;
 }
 
 ul {
@@ -34,22 +39,51 @@ h1 {
 	font-size: 28px;
 }
 
+button {
+	background-color: #999;
+	border: none;
+	color: white;
+	padding: 5px 10px;
+	font-size: 0.8em;
+}
+
+button[type=submit] {
+	background-color: #22B5BF;
+	border-bottom: 1px solid #099CA6;
+}
+
+.status-container {
+	margin: 10px 10px 0 10px;
+	background-color: #FFF;
+	//border: 2px solid #e6e6e6;
+}
+
+.choice-info button[type=submit] {
+	width: 100%;
+}
+
 .container {
 	text-align: center;
 }
 
 .choices {
 	clear: both;
+	padding: 10px;
+	margin-top: 0;
 }
 
 .choices li {
-	font-size: 24px;
+	color: #fff;
+	font-size: 18px;
+	margin: 5px 0;
 	padding: 12px;
 }
 
 .date-container {
 	padding: 10px;
 	float: left;
+	border-right: solid 6px rgb(247,247,247);
+	margin-right: 5px;
 }
 
 .day {
@@ -70,22 +104,46 @@ h1 {
 }
 
 li.dry {
-	background-color: darkseagreen;
+	background-color: #88C134;
+	border-bottom: solid 2px #6FA81B;
+}
+
+li.dry:active {
+	background-color: #6FA81B;
 }
 
 li.thread {
+	background-color: #FFF;
+	border-bottom: solid 2px #E6E6E6;
+	color: #363636;
+}
+
+li.thread:active {
+	background-color: #E6E6E6;
 }
 
 li.sticky {
-	background-color: lemonchiffon;
+	background-color: #F7C808;
+	border-bottom: solid 2px #DEAF00;
+}
+
+li.sticky:active {
+	background-color: #DEAF00;
 }
 
 li.period {
-	background-color: indianred;
+	background-color: #D2315D;
+	border-bottom: solid 2px #B91844;
+}
+
+li.period:active {
+	background-color: #B91844;
 }
 
 li.spotty {
 	background: url(polka-10-10.png) 0 10px repeat;
+	border-bottom: solid 2px #E6E6E6;
+	color: #363636;
 }
 
 .clearfix:after {
@@ -95,7 +153,13 @@ li.spotty {
 }
 
 .choice-comment {
-	min-width: 30em;
-	width: 50%;
+	//min-width: 30em;
+	width: 95%;
 	height: 10em;
+	margin: auto;
+}
+
+.choice-info {
+	margin: 0 auto;
+	width: 300px;
 }
